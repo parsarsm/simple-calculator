@@ -9,11 +9,12 @@ def get_float(prompt):
 
 def main():
     commands = [
-        #(command, name, operation, ),
-        ('1', 'add', '+', ),
-        ('2', 'sub', '-', ),
-        ('3', 'mult', '*', ),
-        ('0', 'exit', '', ),
+        # (command, name, operation, ),
+        ('1', 'add', '+',),
+        ('2', 'sub', '-',),
+        ('3', 'mult', '*',),
+        ('4', 'mod', '%',),
+        ('0', 'exit', '',),
     ]
 
     while True:
