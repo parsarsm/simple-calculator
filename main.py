@@ -1,3 +1,6 @@
+import math
+
+
 def get_float(prompt):
     while True:
         try:
@@ -15,6 +18,7 @@ def main():
         ('3', 'mult', '*',),
         ('4', 'mod', '%',),
         ('5', 'power', '**',),
+        ('6', 'sin', 'sin',),
         ('0', 'exit', '',),
     ]
 
@@ -33,9 +37,15 @@ def main():
             if option == command[0]:
                 if command[2] == '':
                     return
-                operands = get_float('1st operand: '), get_float('2nd operand: ')
-                operation = f'{operands[0]:.2f} {command[2]} {operands[1]:.2f}'
-                print(f'{operation} = {eval(operation):.2f}\n')
+
+                if int(option) > 5:
+                    operand = get_float('operand: ')
+                    operation = f'math.{command[2]}({operand:.2f})'
+                    print(f'{operation[5:]} = {eval(operation):.2f}\n')
+                else:
+                    operands = get_float('1st operand: '), get_float('2nd operand: ')
+                    operation = f'{operands[0]:.2f} {command[2]} {operands[1]:.2f}'
+                    print(f'{operation} = {eval(operation):.2f}\n')
 
 
 if __name__ == '__main__':
