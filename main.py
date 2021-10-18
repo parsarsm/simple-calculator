@@ -1,6 +1,11 @@
 import math
 
 
+class Colors:
+    HEADER = '\033[95m'
+    OKCYAN = '\033[96m'
+    ENDC = '\033[0m'
+
 def get_float(prompt):
     while True:
         try:
@@ -29,9 +34,9 @@ def main():
 
     while True:
         print(
-            'choose one of the commands bellow:\n' +
+            Colors.HEADER + 'choose one of the commands bellow:\n' + Colors.ENDC +
             ('\n'.join([
-                f'{command[0]}) {command[1]}'
+                Colors.OKCYAN + f'{command[0]})' + Colors.ENDC + Colors.BOLD + f' {command[1]}' + Colors.ENDC
                 for command in commands
             ])) +
             '\n'
@@ -46,11 +51,11 @@ def main():
                 if int(option) > 5:
                     operand = get_float('operand: ')
                     operation = f'math.{command[2]}({operand:.2f})'
-                    print(f'{operation[5:]} = {eval(operation):.2f}\n')
+                    print(Colors.BOLD + f'{operation[5:]}' + Colors.ENDC + f' = {eval(operation):.2f}\n')
                 else:
                     operands = get_float('1st operand: '), get_float('2nd operand: ')
                     operation = f'{operands[0]:.2f} {command[2]} {operands[1]:.2f}'
-                    print(f'{operation} = {eval(operation):.2f}\n')
+                    print(Colors.BOLD + f'{operation}' + Colors.ENDC + f' = {eval(operation):.2f}\n')
 
 
 if __name__ == '__main__':
