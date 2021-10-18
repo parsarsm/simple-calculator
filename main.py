@@ -12,6 +12,7 @@ def main():
         #(command, name, operation, ),
         ('1', 'add', '+', ),
         ('2', 'sub', '-', ),
+        ('3', 'mult', '*', ),
         ('0', 'exit', '', ),
     ]
 
