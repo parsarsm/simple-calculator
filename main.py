@@ -21,6 +21,7 @@ def main():
         ('6', 'sin', 'sin',),
         ('7', 'cos', 'cos',),
         ('8', 'tan', 'tan',),
+        ('9', 'sqrt', 'sqrt',),
         ('0', 'exit', '',),
     ]
 
