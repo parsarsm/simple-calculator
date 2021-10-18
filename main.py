@@ -5,6 +5,7 @@ class Colors:
     HEADER = '\033[95m'
     OKCYAN = '\033[96m'
     ENDC = '\033[0m'
+    BOLD = '\033[1m'
 
 def get_float(prompt):
     while True:
